@@ -1,2 +1,2 @@
 # TIF155-Dynamical-Systems
-Course TIF155 at Chalmers University. Here have dynamical systems of ODEs been simulated in various ways.
+Course TIF155 at Chalmers University. Focus here has been on simulating dynamical systems of non-linear ODEs in various ways.

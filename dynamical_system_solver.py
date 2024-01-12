@@ -4,9 +4,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.integrate import odeint
 
-title = ''
-location = ''
-
 xmin = -2
 ymin = -2
 xmax = 2
@@ -41,7 +38,7 @@ solver = odeint(dynamical_system, IC, t)
 x = solver[:,0]
 y = solver[:,1]
 
-# Cutting initial trajectory tail, useful for plotting limit cycles
+# Cutting initial trajectory tail for plotting limit cycles
 # cut_tail = 100
 # t_new = t[cut_tail:]-cut_tail*dt
 # x = solver[cut_tail:,0]
@@ -51,12 +48,15 @@ y = solver[:,1]
 fig, ax = plt.subplots(figsize=(7,7))
 ax.streamplot(X, Y, dxdt_streamplot, dydt_streamplot, density = 2)
 ax.plot(x, y, '-', color='red', linewidth=2)
-ax.plot(x0, y0, '.', color='black', markersize=15, label='') # Equilibrium/initial condition
+ax.plot(x0, y0, '.', color='black', markersize=15, label='') # Initial condition
 ax.set_xlabel('$x$')
 ax.set_ylabel('$y$')
 ax.set_xlim(xmin,xmax)
 ax.set_ylim(xmin,xmax)
 ax.set_box_aspect(1) 
+
+title = ''
+location = ''
 
 plt.legend(loc="upper left")
 plt.savefig(location+title+'.png')
